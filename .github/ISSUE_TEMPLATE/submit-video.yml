@@ -1,0 +1,43 @@
+name: Submit a video
+description: Suggest a Seedance 2.5 video for the list / 推荐一个 Seedance 2.5 视频
+labels: [submission]
+body:
+  - type: input
+    id: post_url
+    attributes:
+      label: Original post URL / 原帖链接
+      description: Link to the X (Twitter) post with the video
+      placeholder: https://x.com/<user>/status/<id>
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Video title / 视频标题
+      description: Short English title for the entry
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category / 分类
+      options:
+        - cinematic
+        - ads
+        - anime
+        - music-videos
+        - motion
+        - long-form
+    validations:
+      required: true
+  - type: input
+    id: tech_tags
+    attributes:
+      label: Tech tags / 技术标签
+      description: "Comma separated: ai-video, image-to-video, multi-shot, native-audio"
+      placeholder: ai-video, multi-shot
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt text / Prompt 文本
+      description: Only what the creator publicly shared in their post or replies. 仅填写作者公开发布的内容。
